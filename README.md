@@ -82,5 +82,8 @@ This is the place for you to write reflections:
 3. Menurut saya Singleton *pattern* tetap perlu digunakan bersama dengan `DashMap`, karena kita ingin agar hanya ada satu daftar `SUBSCRIBERS` yang digunakan, tetapi `SUBSCRIBERS` tersebut harus dapat digunakan oleh banyak *thread* secara bersamaan sehingga diperlukan penggunaan `DashMap` agar `SUBSCRIBERS` dapat diakses secara *thread-safe*.
 
 #### Reflection Publisher-2
+1. Jika Model bertanggung jawab atas *data storage* dan *business logic* sekaligus, itu berarti Model melanggar prinsip SRP (Single Responsibility Principle). Oleh karena itu, Model perlu dipisah menjadi Service dan Repository agar setiap komponen bertanggung jawab atas salah satu dari *data storage* atau *business logic*. Hal ini akan mendukung *clean code* dan meningkatkan *maintainability* dari *codebase* kita.
+2. Kalau kita menggunakan Model tanpa separasi, maka kita akan mendapatkan bahwa kode kita menjadi panjang sekali dan kita akan sulit untuk melakukan *maintenance* pada masing-masing model seperti Program, Subscriber, dan Notification. Selain itu, setiap model akan saling bergantung satu sama lain sehingga jika ada perubahan pada salah satu model, bisa jadi model yang lain harus diubah juga.
+3. Postman sangat berguna untuk menguji *endpoint* yang kita membuat dengan mensimulasikan request HTTP seperti GET, POST, DELETE, PUT, PATCH, dan lain-lainnya. Kita juga bisa mengatur isi dari request yang dikirim, seperti *request header* dan *request body* (*form data*, *raw data*, JSON, dan lain-lain). Setelah itu, kita bisa melihat response dari aplikasi kita untuk menentukan apakah sudah sesuai dengan ekspektasi kita.
 
 #### Reflection Publisher-3
