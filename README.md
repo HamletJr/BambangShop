@@ -77,6 +77,9 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Menurut saya pada kasus ini, *interface* atau *trait* belum diperlukan karena hanya terdapat satu *class* saja yang menjadi *subscriber*, namun ke depannya jika ada class lain yang ingin menjadi *subscriber* sebaiknya dibuat interface untuk menjaga prinsip OCP. 
+2. Menurut saya `DashMap` bisa saja tidak digunakan, tetapi hal tersebut akan mempersulit implementasi karena kita perlu menggunakan 2 `Vec` (list) untuk menyimpan produk dan *subscriber*-nya.
+3. Menurut saya Singleton *pattern* tetap perlu digunakan bersama dengan `DashMap`, karena kita ingin agar hanya ada satu daftar `SUBSCRIBERS` yang digunakan, tetapi `SUBSCRIBERS` tersebut harus dapat digunakan oleh banyak *thread* secara bersamaan sehingga diperlukan penggunaan `DashMap` agar `SUBSCRIBERS` dapat diakses secara *thread-safe*.
 
 #### Reflection Publisher-2
 
